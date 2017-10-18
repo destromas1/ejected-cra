@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Grid, Navbar, Jumbotron, Button } from "react-bootstrap";
+import { Grid, Navbar } from "react-bootstrap";
 import logo from "../../logo.svg";
 import "../App.css";
 

@@ -6,7 +6,7 @@ import App from "./app/App";
 import registerServiceWorker from "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
-import { HashRouter, Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route} from "react-router-dom";
 
 import { store } from "./core/store/store.config";
 import SpeakerList from "./app/speakers/SpeakerList";

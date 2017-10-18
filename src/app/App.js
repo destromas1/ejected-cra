@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 // import { Grid, Navbar, Jumbotron, Button } from "react-bootstrap";
-import logo from "../logo.svg";
 import "./App.css";
 import Home from "./components/home";
 import Header from "./components/header";

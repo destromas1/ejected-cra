@@ -8,7 +8,7 @@ export function saveSpeakers(speakers) {
 }
 
 export const getSpeakers = () => (dispatch, getState) => {
-  const state = getState();
+  // const state = getState();
 
   return fetch(`${API_SERVER}/speakers`)
     .then(
