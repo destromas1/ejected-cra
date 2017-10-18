@@ -13,7 +13,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {concatStr("Shahjada")}
+        <h1>{concatStr("Yay")}</h1>
       </div>
     );
   }
