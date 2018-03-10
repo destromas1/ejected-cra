@@ -15,10 +15,17 @@ export const getSpeakers = () => (dispatch, getState) => {
   return fetch(`${API_SERVER}/speakers`)
     .then(
       response => response.json(),
-      error => console.log("An error occured.", error)
+      error => {
+        console.log("No! error occured.", error);
+        throw error;
+      }
     )
     .then(speakers => {
-      console.log("speakers", speakers);
+      console.log("speakers success", speakers);
       dispatch(saveSpeakers(speakers));
+    })
+    .catch(error => {
+      console.log("Return Error by throwing", error);
+      throw error;
     });
 };
