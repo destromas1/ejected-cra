@@ -1,8 +1,10 @@
+import { SAVE_SPEAKERS } from "../action-types";
+
 const API_SERVER = "http://localhost:9000";
 
 export function saveSpeakers(speakers) {
   return {
-    type: "SAVE_SPEAKERS",
+    type: SAVE_SPEAKERS,
     payload: speakers
   };
 }
