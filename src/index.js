@@ -9,14 +9,14 @@ import "bootstrap/dist/css/bootstrap-theme.css";
 import { HashRouter, Switch, Route} from "react-router-dom";
 
 import { store } from "./core/store/store.config";
-import SpeakerList from "./app/speakers/SpeakerList";
+import SpeakerPage from "./app/speakers/SpeakerPage";
 
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/speakers" component={SpeakerList} />
+        <Route path="/speakers" component={SpeakerPage} />
       </Switch>
     </HashRouter>
   </Provider>,

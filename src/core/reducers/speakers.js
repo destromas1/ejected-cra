@@ -1,3 +1,5 @@
+import { SAVE_SPEAKERS } from "../action-types";
+
 const initialState = {
   list: []
 };
@@ -11,7 +13,7 @@ function loadSpeakers(state, data) {
 
 function speakers(state = initialState, action) {
   switch (action.type) {
-    case "SAVE_SPEAKERS":
+    case SAVE_SPEAKERS:
       return loadSpeakers(state, action.payload);
     default: {
       return state;

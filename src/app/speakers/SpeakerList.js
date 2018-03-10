@@ -11,25 +11,15 @@ class SpeakerList extends Component {
   }
 
   render() {
-    let elements;
+    const { speakers } = this.props;
 
-    if (this.props.speakers) {
-      elements = this.props.speakers.map((speaker, i) => {
-        return (
-          <div>
-            <Speaker key={speaker.id} data={speaker} />
-          </div>
-        );
+    const elements =
+      speakers &&
+      speakers.map((speaker, i) => {
+        return <Speaker key={speaker.id} data={speaker} />;
       });
-    }
 
-    return (
-      <div className="App">
-        <Header />
-        <h1>Today's Speakers</h1>
-        {elements}
-      </div>
-    );
+    return <div>{elements}</div>;
   }
 }
 

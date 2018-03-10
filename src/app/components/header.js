@@ -11,7 +11,7 @@ class Header extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">
-            Welcome to React.js & React Native Berlin Meetup at Home24
+            Welcome to the react session
           </h1>
         </header>
         <div className="App-intro">
