@@ -1,9 +1,9 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 class Speaker extends Component {
 
   render() {
-    return this.props.data.name;
+    return <div>{this.props.data.name}</div>;
   }
 }
 

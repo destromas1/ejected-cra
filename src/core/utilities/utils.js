@@ -1,4 +1,4 @@
-const rootStr = "Lets do a great Meetup";
+const rootStr = "Lets make it a successful Meetup";
 
 const concatStr = name => {
   const str = `${rootStr} - ${name}`;

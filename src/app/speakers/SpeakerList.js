@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../components/header";
 import { getSpeakers } from "../../core/actions/speakers";
-// import ErrorBoundary from "../ErrorBoundary";
 import Speaker from "./Speaker";
 
 class SpeakerList extends Component {
@@ -12,13 +11,13 @@ class SpeakerList extends Component {
   }
 
   render() {
-    const elements = this.props.speakers.map((speaker, i) => {
-      return (
-        <div>
-          <Speaker key={speaker.id} data={speaker} />
-        </div>
-      );
-    });
+    const { speakers } = this.props;
+
+    const elements =
+      speakers &&
+      speakers.map((speaker, i) => {
+        return <Speaker key={speaker.id} data={speaker} />;
+      });
 
     return <div>{elements}</div>;
   }
@@ -29,7 +28,6 @@ function mapStateToProps(state) {
   if (state.speakers.list.length > 0) {
     speakers = state.speakers.list;
   }
-  console.log("speakers", speakers);
   return {
     speakers
   };
