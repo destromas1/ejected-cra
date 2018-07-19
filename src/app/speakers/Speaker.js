@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Speaker extends Component {
 
   render() {
-    return <div>{this.props.data.name}</div>;
+    return <div onClick={()=> this.props.changeSpeakerData(this.props.data.id)}>{this.props.data.name}</div>;
   }
 }
 

@@ -1,13 +1,42 @@
 import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { find } from "lodash";
 import Header from "../components/header";
 import { getSpeakers } from "../../core/actions/speakers";
 import Speaker from "./Speaker";
 
 class SpeakerList extends Component {
+  constructor(props) {
+    super(props);
+    this.changeSpeakerData = this.changeSpeakerData.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchSpeakers();
+  }
+
+  changeSpeakerData(id) {
+    console.log("id", id);
+
+    const { speakers } = this.props;
+
+    const speaker = find(speakers, { id: id });
+
+    speaker.name = "Masoom";
+    speaker.label = "Yes New label";
+
+    console.log(speaker);
+    console.log(this.props.speakers);
+
+    
+
+    // user = {
+    //   ...user,
+    //   type: objectTypes.user,
+    //   label: user.fullName
+    // };
+    // users.push(user);
   }
 
   render() {
@@ -16,7 +45,13 @@ class SpeakerList extends Component {
     const elements =
       speakers &&
       speakers.map((speaker, i) => {
-        return <Speaker key={speaker.id} data={speaker} />;
+        return (
+          <Speaker
+            changeSpeakerData={this.changeSpeakerData}
+            key={speaker.id}
+            data={speaker}
+          />
+        );
       });
 
     return <div>{elements}</div>;
@@ -37,4 +72,7 @@ const mapDispatchToProps = dispatch => ({
   fetchSpeakers: () => dispatch(getSpeakers())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SpeakerList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SpeakerList);
